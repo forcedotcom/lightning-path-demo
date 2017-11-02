@@ -1,0 +1,93 @@
+<aura:component >    
+    <aura:attribute name="newOnBoardingRecord" type="Object"/>
+    <aura:attribute name="onBoardingRecordFields" type="Object"/>
+    <aura:attribute name="newOnBoardingRecordError" type="String"/>
+    <aura:attribute name="jobApplicationRecord" type="Object"/>
+    
+    <aura:registerEvent name="onJobApplicationRecordChange" type="c:jobApplicationRecord"/>
+
+    <force:recordData aura:id="onBoardingRecordCreator" 
+                      layoutType="FULL"
+                      targetRecord="{!v.newOnBoardingRecord}"
+                      targetFields="{!v.onBoardingRecordFields}"
+                      targetError="{!v.newOnBoardingRecordError}" />
+    
+    <div class="demo-only slds-grid" style="width:50%; background: rgb(244, 246, 249); padding: 1rem;">
+        <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+            <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+                <div class="slds-panel__section slds-border_bottom">
+                    <div class="slds-media">                        
+                        <div class="slds-media__body">
+                            <h2 class="slds-truncate slds-text-heading_small">
+                                Accepted Offer
+                            </h2>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-panel__section">
+                    <ul>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <figure  onclick="{! c.handleAcceptedOffer }">
+                                <img src="http://emojis.slackmojis.com/emojis/images/1450694616/220/bananadance.gif?1450694616" 
+                                     width="200"/>
+                                <figcaption class="title">Continue to onBoarding</figcaption>
+                            </figure>
+                            <!-- <span class="slds-form-element__label">Accepted Offer</span>
+                            <div class="slds-form-element__control">
+                                <lightning:button variant="success" label="Continue to onBoarding" iconName="action:approval"
+                                                  iconPosition="left" onclick="{! c.handleAcceptedOffer }" type="button" />
+                            </div> --> 
+                        </li>                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="demo-only slds-grid" style="width:50%; background: rgb(244, 246, 249); padding: 1rem;">
+        <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+            <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+                <div class="slds-panel__section slds-border_bottom">
+                    <div class="slds-media">                        
+                        <div class="slds-media__body">
+                            <h2 class="slds-truncate slds-text-heading_small">
+                                Rejected Offer
+                            </h2>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-panel__section">
+                    <ul>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <figure  onclick="{! c.handleGoBackToOfferStep }">
+                                <img src="http://emojis.slackmojis.com/emojis/images/1471045871/912/sadsmile.gif?1471045871" 
+                                     width="200"/>
+                                <figcaption class="title">Modify Offer</figcaption>
+                            </figure>
+                        </li>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Rejected Offer</span>
+                            <div class="slds-form-element__control">
+                                <lightning:button variant="destructive" label="Negotiate Offer" onclick="{! c.handleNegotiate }"
+                                                  type="button" iconName="utility:moneybag"/>                                
+                            </div>
+                            <!-- <div class="slds-form-element__control">
+                                <lightning:button variant="destructive" label="Redo Offer" onclick="{! c.handleGoBackToOfferStep }"
+                                                  type="button" iconName="action:back"/>                                
+                            </div> -->
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Display Lightning Data Service errors -->
+    <aura:if isTrue="{!not(empty(v.newOnBoardingRecordError))}">
+        <div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v.newOnBoardingRecordError}
+            </ui:message>
+        </div>
+    </aura:if>    
+</aura:component>

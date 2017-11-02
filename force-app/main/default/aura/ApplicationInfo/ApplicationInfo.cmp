@@ -1,0 +1,184 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <!-- Attributes --> 
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>    
+    
+    <!-- Markup -->
+    
+    <div class="demo-only slds-grid" style="width:20%; background: rgb(244, 246, 249); padding: 1rem;">
+        <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+            <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+                <div class="slds-panel__section slds-border_bottom">
+                    <div class="slds-media">                        
+                        <div class="slds-media__body">
+                            <h2 class="slds-truncate slds-text-heading_small">
+                                Application Information
+                            </h2>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-panel__section">                    
+                    <ul>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Applicant Name</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">Albert Einstein</span>
+                            </div>
+                        </li>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Position</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">Insights Architect</span>
+                            </div>
+                        </li>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Referrer's Name</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">Sultan Ali</span>
+                            </div>
+                        </li>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Referrer's Email</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">
+                                    <a onclick="{! c.emailReferrer }">sultan@awesome.demo</a>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="demo-only slds-grid" style="width:40%; background: rgb(244, 246, 249); padding: 1rem;">
+        <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+            <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+                <div class="slds-panel__section slds-border_bottom">
+                    <div class="slds-media">                        
+                        <div class="slds-media__body">
+                            <h2 class="slds-truncate slds-text-heading_small">
+                                Experience
+                            </h2>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-panel__section">                    
+                    <ul>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Work Experience</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">Institute of Advanced Study 1933-1955</span>
+                                <span class="slds-form-element__static">University of Bern 1908-1911</span>
+                                <span class="slds-form-element__static">Swiss patent office 1901 - 1903</span>
+                            </div>
+                        </li>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Education</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">Master of Science, Zurich Polytechnic</span>
+                                <span class="slds-form-element__static">Degree in Physics, Zurich Polytechnic</span>
+                            </div>
+                        </li>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Volunteer Experience</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">Various papers on the theory of relativity</span>
+                            </div>
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="demo-only slds-grid" style="width:20%; background: rgb(244, 246, 249); padding: 1rem;">
+        <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+            <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+                <div class="slds-panel__section slds-border_bottom">
+                    <div class="slds-media">                        
+                        <div class="slds-media__body">
+                            <h2 class="slds-truncate slds-text-heading_small">
+                                Contact Information
+                            </h2>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-panel__section">                    
+                    <ul>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Phone Number</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">(415) 123-4567</span>
+                            </div>
+                        </li>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Email</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">einstein@awesome.com</span>                                
+                            </div>
+                        </li>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Applicant Address</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">1 Market Street, San Francisco, CA 94005</span>
+                            </div>
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="demo-only slds-grid" style="width:20%; background: rgb(244, 246, 249); padding: 1rem;">
+        <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+            <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+                <div class="slds-panel__section slds-border_bottom">
+                    <div class="slds-media">                        
+                        <div class="slds-media__body">
+                            <h2 class="slds-truncate slds-text-heading_small">
+                                Full Profile
+                            </h2>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-panel__section">                    
+                    <ul>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">LinkedIn Profile</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">
+                                    <figure id='linkedPhoto' onclick="{! c.onClickLinkedInPhoto }">
+                                        <img width="50" aria-hidden="true" src="/resource/einstein" />
+                                        <figcaption style="text-align: center;">Einstein</figcaption>                                        
+                                    </figure>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">
+                                    <figure>                                        
+                                        <figcaption class="slds-file__title slds-file__title_card">
+                                            <div class="slds-media slds-media_small slds-media_center">
+                                                <div class="slds-media__figure slds-line-height_reset">
+                                                    <span class="slds-icon_container" title="pdf">
+                                                        <lightning:icon iconName="doctype:pdf"/>
+                                                        <span class="slds-assistive-text">pdf</span>
+                                                    </span>
+                                                </div>
+                                                <div class="slds-media__body">
+                                                    <span class="slds-file__text slds-truncate" title="Proposal.pdf">Resume.pdf</span>
+                                                </div>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </span>
+                            </div>
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

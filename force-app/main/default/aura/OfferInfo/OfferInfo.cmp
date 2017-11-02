@@ -1,0 +1,49 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <div class="offer-body slds-grid" style="background: rgb(244, 246, 249); padding: 1rem;">
+        <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+            <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+                <div class="slds-panel__section slds-border_bottom">
+                    <div class="slds-media">                        
+                        <div class="slds-media__body">
+                            <h2 class="slds-truncate slds-text-heading_small">
+                                Send offer letter:
+                            </h2>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-panel__section">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                                
+                            </h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <lightning:inputRichText aura:id="composeEmail"
+                                                     value="Dear Einstein, 
+                                                            
+                                                            I am pleased to offer you a position with
+                                                            Salesforce.com, Inc. as President of Worldwide Research operations
+                                                            reporting to Nikoli Tesla, Chief Technology Officer"
+                                                     variant="Email" >
+                            </lightning:inputRichText>
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <button class="slds-button slds-button_icon slds-button_icon-inverse">
+                                <lightning:icon iconName="action:close"/>
+                            </button>
+                            <button class="slds-button slds-button_icon slds-button_icon-inverse"
+                                    onclick="{! c.showMeTheMoney }">
+                                <lightning:icon iconName="action:email"/>
+                            </button>
+                        </footer>
+                    </div>
+                    
+                    <lightning:fileUpload label="Attach Offer package" multiple="true" accept=".pdf, .png"
+                                          recordId="{!v.recordId}" onuploadfinished="{!c.handleUploadFinished}" />                    
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>
