@@ -1,0 +1,76 @@
+<!-- 
+ * Copyright (c) 2017, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license. 
+ * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+-->
+<aura:component access="global" >
+    <!-- Attributes --> 
+    <aura:attribute name="recordId" type="String"/>
+    
+    <aura:registerEvent name="onJobApplicationRecordChange" type="c:jobApplicationRecord"/>
+    
+    <!-- Markup -->
+    <div class="demo-only slds-grid" style="width:30%; background: rgb(244, 246, 249); padding: 1rem;">
+        <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+            <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+                <div class="slds-panel__section slds-border_bottom">
+                    <div class="slds-media">                        
+                        <div class="slds-media__body">
+                            <h2 class="slds-truncate slds-text-heading_small">
+                                Contact Information
+                            </h2>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-panel__section">                    
+                    <ul>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Phone Number</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">
+                                    <lightning:clickToDial value="14152145561" recordId="{! v.recordId }"/>
+                                </span>                                
+                            </div>
+                        </li>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Email</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">einstein@awesome.com</span>                                
+                            </div>
+                        </li>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <span class="slds-form-element__label">Applicant Address</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">1 Market Street, San Francisco, CA 94005</span>
+                            </div>
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="demo-only slds-grid" style="width:70%; background: rgb(244, 246, 249); padding: 1rem;">
+        <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+            <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+                <div class="slds-panel__section slds-border_bottom">
+                    <div class="slds-media">                        
+                        <div class="slds-media__body">
+                            <h2 class="slds-truncate slds-text-heading_small">
+                                Notes from Phone Screen
+                            </h2>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-panel__section">
+                    <lightning:inputRichText aura:id="phoneScreenNotes" variant="Email" >
+                    </lightning:inputRichText>
+                </div>
+                <div class="slds-panel__section">
+                    <lightning:button variant="brand" label="Save Notes" onclick="{! c.handleSaveNotes }" />
+                </div>                    
+            </div>
+        </div>
+    </div>
+</aura:component>

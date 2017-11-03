@@ -1,0 +1,40 @@
+<!-- 
+ * Copyright (c) 2017, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license. 
+ * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+-->
+<aura:component extends="c:carStageBuilder">
+    <!-- Attributes --> 
+    <aura:attribute name="record" type="Object"/>
+    
+    <!-- Events --> 
+    <aura:registerEvent name="onbuild" type="c:carBuild"/>
+
+	<div id="Summary">
+            <figure id="{! 'White_White '+v.record.fields.Model__c.value + ' ' + v.record.fields.Type__c.value }" class="colorCard" onclick="{!c.build}">
+                <div class="color" style="background-color:white;" />
+                <figcaption style="text-align: center;">White</figcaption>
+            </figure>
+            <figure id="{! 'Silver_Silver '+v.record.fields.Model__c.value + ' ' + v.record.fields.Type__c.value }" class="colorCard" onclick="{!c.build}">
+                <div class="color" style="background-color:silver;" />
+                <figcaption style="text-align: center;">Silver</figcaption>
+            </figure>
+            <figure id="{! 'Gray_Gray '+v.record.fields.Model__c.value + ' ' + v.record.fields.Type__c.value }" class="colorCard" onclick="{!c.build}">
+                <div class="color" style="background-color:Gray;" />
+                <figcaption style="text-align: center;">Gray</figcaption>
+            </figure>
+            <figure id="{! 'Yellow_Yellow '+v.record.fields.Model__c.value + ' ' + v.record.fields.Type__c.value }" class="colorCard" onclick="{!c.build}">
+                <div class="color" style="background-color:Yellow;" />
+                <figcaption style="text-align: center;">Yellow</figcaption>
+            </figure>
+            <figure id="{! 'Red_Red '+v.record.fields.Model__c.value + ' ' + v.record.fields.Type__c.value }" class="colorCard" onclick="{!c.build}">
+                <div class="color" style="background-color:red;" />
+                <figcaption style="text-align: center;">Red</figcaption>
+            </figure>
+            <figure id="{! 'Blue_Blue '+v.record.fields.Model__c.value + ' ' + v.record.fields.Type__c.value }" class="colorCard" onclick="{!c.build}">
+                <div class="color" style="background-color:darkBlue;" />
+                <figcaption style="text-align: center;">Blue</figcaption>
+            </figure>
+        </div>
+</aura:component>

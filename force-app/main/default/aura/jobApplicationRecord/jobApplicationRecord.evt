@@ -1,4 +1,0 @@
-<aura:event type="Component" description="Event template" >
-    <aura:attribute name="newFieldValue" type="String"/>
-    <aura:attribute name="fieldToUpdate" type="String"/>
-</aura:event>

@@ -1,0 +1,101 @@
+/*
+ * Copyright (c) 2017, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license. 
+ * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+ */
+.THIS {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.THIS .carBody {
+    padding: 10px;
+    text-align: center;
+}
+
+.THIS figure {
+    width: 240px;
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    cursor: hand;
+    vertical-align: top;
+}
+
+.THIS figure:hover { 
+    border: 1px solid red;
+    border-radius: 16px;
+}
+
+.THIS img {
+    margin: -50px 0;
+}
+
+.THIS figcaption {
+    text-align: left;
+    font-weight: bold;
+    margin: 10px 30px;
+}
+
+.THIS .item {
+    display: inline-block; 
+    text-align: left;
+    margin: 10px 30px;
+}
+
+.THIS .sub-title {
+    font-size: 0.8rem;
+    color: #666;
+}
+.THIS .bold {
+    font-weight: bold;
+    margin: 10px 0;
+}
+.THIS .title {
+    text-align: center;
+}
+.THIS .highlights {
+    margin: 20px 0 10px 0;
+}
+
+.THIS ul {
+    list-style-type: square;
+}
+
+.THIS .details {
+    font-size: 0.8rem;
+}
+
+.THIS .colorCard {
+    width: 100px;
+}
+
+.THIS .color {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin:30px auto;
+	cursor: pointer;
+    border: 1px solid ;
+    border-radius: 16px;
+}
+
+.THIS .color:hover { 
+    border: 2px solid purple;
+    border-radius: 16px;
+}
+
+.THIS .summary {
+    text-align: center;
+    padding-top: 250px;
+    margin-bottom: 30px;
+}
+
+.THIS .car {
+    position: absolute;
+    left: 0px;
+    top: 100px;
+}

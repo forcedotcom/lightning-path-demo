@@ -1,0 +1,78 @@
+<!-- 
+ * Copyright (c) 2017, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license. 
+ * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+-->
+<aura:component extends="c:carStageBuilder">
+    <!-- Attributes --> 
+    <aura:attribute name="record" type="Object"/>
+    
+    <!-- Events --> 
+    <aura:registerEvent name="onbuild" type="c:carBuild"/>
+
+    <!-- body --> 
+	<div id="Color">
+            <figure id='Basic_49999' onclick="{!c.build}" >
+                <img src="{! '/resource/' + v.record.fields.Type__c.value + '_Basic'}" width="200" />
+                <figcaption>Basic</figcaption>
+                <div class="item">
+                    <div>$49,999</div>
+                    <div class="sub-title">starting msrp<sup data-code="msrp" data-disclaimer="msrp">1</sup></div>
+					<div class="highlights">Highlights</div>
+                    <div class="details">
+                    <ul>
+                        <li>Available Smart Key System</li>
+                        <li>17-In. Alloy Wheels</li>
+                    </ul>
+                    </div>                    
+                </div>
+            </figure>
+			<figure id='Limited_59999' onclick="{!c.build}" >
+                <img src="{! '/resource/' + v.record.fields.Type__c.value + '_Limited'}" width="200"/>
+                <figcaption>Limited</figcaption>
+                <div class="item">
+                    <div>$59,999</div>
+                    <div class="sub-title">starting msrp<sup data-code="msrp" data-disclaimer="msrp">1</sup></div>
+					<div class="highlights">Highlights</div>
+                    <div class="details">
+                    <ul>
+                        <li>Include all features from Basic Model</li>
+                        <li>18-In. Silver Machined-Finish Alloy Wheels</li>
+                        <li>Available Panoramic Glass Roof With Front Power Tilt/Slide Moonroof</li>
+                    </ul>
+                    </div>                    
+                </div>
+            </figure>
+            <figure id='Hybrid_69999' onclick="{!c.build}">
+                <img src="{! '/resource/' + v.record.fields.Type__c.value + '_Hybrid'}" width="200"/>
+                <figcaption>Hybrid</figcaption>
+                <div class="item">
+                    <div>$69,999</div>
+                    <div class="sub-title">starting msrp<sup data-code="msrp" data-disclaimer="msrp">1</sup></div>
+					<div class="highlights">Highlights</div>
+                    <div class="details">
+                    <ul>
+                        <li>Include all features from Basic Model</li>
+                        <li>Available Bird's Eye View Camera With Perimeter Scan</li>
+                    </ul>
+                    </div>                    
+                </div>
+            </figure>
+            <figure id='Platinum_79999' onclick="{!c.build}">
+                <img src="{! '/resource/' + v.record.fields.Type__c.value + '_Platinum'}" width="200"/>
+                <figcaption>Platinum</figcaption>
+                <div class="item">
+                    <div>$79,999</div>
+                    <div class="sub-title">starting msrp<sup data-code="msrp" data-disclaimer="msrp">1</sup></div>
+					<div class="highlights">Highlights</div>
+                    <div class="details">
+                    <ul>
+                        <li>Include all features from Limited Model</li>
+                        <li>Upgraded Audio System With Connected Navigation</li>
+                    </ul>
+                    </div>                    
+                </div>
+            </figure>
+        </div>
+</aura:component>

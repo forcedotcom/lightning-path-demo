@@ -1,0 +1,38 @@
+<!-- 
+ * Copyright (c) 2017, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license. 
+ * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+-->
+<aura:component extends="c:carStageBuilder">
+	<!-- Attributes --> 
+    <aura:attribute name="record" type="Object"/>
+    
+    <!-- Events --> 
+    <aura:registerEvent name="onbuild" type="c:carBuild"/>
+
+    <div>
+    	<img aura:id='car' src="{! '/resource/' + v.record.fields.Type__c.value + '_' + v.record.fields.Model__c.value + '_' + v.record.fields.Color__c.value}" 
+             width="400" class="car" style="left:-400px;"/>
+    	<div class="summary">
+            <p>
+                <lightning:button aura:id="button" variant="brand" label="Buy this car" iconName="action:update"
+                                  iconPosition="left" onclick="{! c.build }" type="submit" />
+            </p>
+            <div class="item">
+                <div class="bold">{!v.record.fields.Color__c.value+' '+v.record.fields.Model__c.value+' '+v.record.fields.Type__c.value}</div>
+                <div>$79,999</div>
+                <div class="sub-title">starting msrp<sup data-code="msrp" data-disclaimer="msrp">1</sup></div>
+                <div class="highlights">Highlights</div>
+                <div class="details">
+                    <ul>
+                        <li>Available Smart Key System</li>
+                        <li>18-In. Silver Machined-Finish Alloy Wheels</li>
+                        <li>Available Panoramic Glass Roof With Front Power Tilt/Slide Moonroof</li>
+                        <li>Upgraded Audio System With Connected Navigation</li>
+                    </ul>
+                </div>                    
+            </div>
+    	</div>
+    </div>
+</aura:component>

@@ -1,0 +1,46 @@
+<!-- 
+ * Copyright (c) 2017, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license. 
+ * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+-->
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <!-- Attributes --> 
+    <aura:attribute name="picklistField" type="String" default="BuildingStage__c"/>
+    <aura:attribute name="currentBuildingStage" type="String"/>
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="fields" type="Object"/>    
+    <aura:attribute name="error" type="String"/>
+    
+    <!-- Handlers -->  
+    <aura:handler name="change" value="{!v.record}" action="{!c.handleValueChange}"/>
+    
+    <!-- header -->
+    <lightning:picklistPath recordId="{!v.recordId}" 
+                            picklistFieldApiName="{!v.picklistField}"
+                            onselect="{!c.select}"/>
+    
+    <!-- body -->
+    <aura:renderIf isTrue="{!v.currentBuildingStage == 'Type'}">
+        <c:carTypeBuilder record="{!v.record}" onbuild="{!c.build}"/>
+    </aura:renderIf>
+    <aura:renderIf isTrue="{!v.currentBuildingStage == 'Model'}">
+        <c:carModelBuilder record="{!v.record}" onbuild="{!c.build}"/>
+    </aura:renderIf>
+    <aura:renderIf isTrue="{!v.currentBuildingStage == 'Color'}">
+        <c:carColorBuilder record="{!v.record}" onbuild="{!c.build}"/>
+    </aura:renderIf>
+    <aura:renderIf isTrue="{!v.currentBuildingStage == 'Summary'}">
+        <c:carSummaryBuilder record="{!v.record}" onbuild="{!c.build}"/>
+    </aura:renderIf>
+    
+    <!-- lightning data service-->
+    <force:recordData aura:id="recordHandler"
+                      recordId="{!v.recordId}"
+                      layoutType="FULL"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.fields}"
+                      targetError="{!v.error}"
+                      mode="EDIT" />
+    
+</aura:component>

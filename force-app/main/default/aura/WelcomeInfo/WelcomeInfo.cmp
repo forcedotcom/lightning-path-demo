@@ -1,4 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome" access="global" >
-	<img src="/resource/welcome" 
-                 width="500"/>
-</aura:component>

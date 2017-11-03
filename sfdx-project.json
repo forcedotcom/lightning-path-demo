@@ -1,9 +1,7 @@
 {
   "packageDirectories": [
-    {
-      "path": "force-app",
-      "default": true
-    }
+    { "path": "lightning-path-app", "default": true},
+    { "path" : "lightning-picklist-app" } 
   ],
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",

@@ -1,0 +1,40 @@
+<!-- 
+ * Copyright (c) 2017, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license. 
+ * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+-->
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <!-- <aura:attribute name="today" type="Date" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <ui:inputDateTime aura:id="today" label="Time" class="field" value="" displayDatePicker="true" />
+    <ui:button class="btn" label="Schedule Interview" press="{!c.setOutput}"/>
+    <div aura:id="msg" class="hide">
+        Interview Schedule for: <ui:outputDateTime aura:id="oDateTime" value=""  />
+    </div> -->
+    
+    <div class="demo-only slds-grid" style="min-height:300px; background: rgb(244, 246, 249); padding: 1rem;">
+        <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+            <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+                <div class="slds-panel__section slds-border_bottom">
+                    <div class="slds-media">                        
+                        <div class="slds-media__body">
+                            <h2 class="slds-truncate slds-text-heading_small">
+                                Schedule Interview
+                            </h2>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-panel__section">                    
+                    <ul>
+                        <li class="slds-form-element slds-hint-parent slds-border_bottom">
+                            <lightning:button variant="success" label="Create Event" iconName="action:new_event"
+                                              iconPosition="left" onclick="{! c.createCalendarEvent }" type="submit" />
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    
+</aura:component>
