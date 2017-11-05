@@ -10,7 +10,7 @@ Please use SalesForce DX (https://developer.salesforce.com/platform/dx) to insta
 # Features
 
 ## Lightning Path demo
-
+An app built using custom lightning components, to help a recruiter go through the hiring process. 
 
 ## Lightning PicklistPath demo
  
