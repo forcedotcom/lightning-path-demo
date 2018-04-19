@@ -1,0 +1,22 @@
+<!-- 
+ * Copyright (c) 2017, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license. 
+ * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+-->
+<design:component label="Fun Path">
+    <design:attribute name="picklistFieldApiName" label="Picklist" description="Enter the api name for the picklist field that you would like to use for the path." />
+    
+    
+    <design:attribute name="animationImage1URL" label="Image1 URL" description="The image you want to display" />
+ 	<design:attribute name="animationImage1Step" label="Step associated with Image1" description="The Image1 step" />
+   	<design:attribute name="animationImage1Width" label="Image1 width" datasource="100, 200, 300, 500, 750" />
+   	<design:attribute name="animationImage1StartingPoint" label="Image1 Starting point" datasource="Top, Bottom, Left, Right" /> 
+   	<design:attribute name="animationImage1Angle" label="Image1 Angle" datasource="-90, -75, -60, -45, -30, -15, 0, 15, 30, 45, 60, 75, 90" />   
+    
+	<design:attribute name="animationImage2URL" label="Image2 URL" description="The image you want to display" />
+    <design:attribute name="animationImage2Step" label="Step associated with Image2" description="The Image2 step" />
+    <design:attribute name="animationImage2Width" label="Image2 width" datasource="100, 200, 300, 500, 750" />
+    <design:attribute name="animationImage2StartingPoint" label="Image2 Starting point" datasource="Top, Bottom, Left, Right" /> 
+    <design:attribute name="animationImage2Angle" label="Image2 Angle" datasource="-90, -75, -60, -45, -30, -15, 0, 15, 30, 45, 60, 75, 90" />    
+</design:component>

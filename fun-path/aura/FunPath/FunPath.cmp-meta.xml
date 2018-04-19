@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>41.0</apiVersion>
+    <description>Custom Path Component that can be added to any Object/Picklist. Updates record without path button and can add animation to the different picklist values.</description>
+</AuraDefinitionBundle>
